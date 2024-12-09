@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Image Search</title>
+</head>
+<body>
+<h1>Image Search</h1>
+<form action="/search" method="post" enctype="multipart/form-data">
+    <label>Text Query:</label>
+    <input type="text" name="text_query" placeholder="e.g. cat on sofa"><br><br>
+    
+    <label>Image Query:</label>
+    <input type="file" name="image_file"><br><br>
+
+    <label>λ (text weight, between 0.0 and 1.0):</label>
+    <input type="text" name="lambda" value="0.5"><br><br>
+
+    <label>Use PCA embeddings for image queries?</label>
+    <input type="checkbox" name="use_pca"><br>
+    <label>Number of PCA components (k):</label>
+    <input type="text" name="n_components" value="100"><br><br>
+
+    <button type="submit">Search</button>
+</form>
+</body>
+</html>

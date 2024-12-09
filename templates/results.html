@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Search Results</title>
+</head>
+<body>
+<h1>Search Results</h1>
+
+<p><b>Text Query:</b> {{ text_query }}</p>
+{% if image_query %}
+<p><b>Image Query:</b><br>
+<img src="{{ image_query }}" width="200">
+</p>
+{% endif %}
+<p><b>λ:</b> {{ lambda_val }}</p>
+<p><b>Use PCA:</b> {{ use_pca }}</p>
+<p><b>PCA Components:</b> {{ n_components }}</p>
+
+<h2>Top 5 Results</h2>
+<ol>
+{% for result in results %}
+  <li>
+    <img src="{{ result.image_path }}" width="200"><br>
+    <b>Score:</b> {{ result.score }}
+  </li>
+{% endfor %}
+</ol>
+
+<a href="/">Back to Search</a>
+</body>
+</html>
